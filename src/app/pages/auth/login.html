@@ -1,0 +1,18 @@
+<main class="auth-page">
+  <a routerLink="/" class="back">← Volver al inicio</a>
+  <section class="auth-card">
+    <div class="auth-copy">
+      <span class="logo">OR</span><span class="eyebrow">Acceso restringido</span>
+      <h1>Administración</h1>
+      <p>Este espacio es exclusivo para el equipo autorizado de la organización.</p>
+      <div class="demo"><strong>Acceso administrativo de demostración</strong><span>admin&#64;organizacion.org + cualquier contraseña</span></div>
+    </div>
+    <form (ngSubmit)="submit()">
+      <div class="field"><label for="email">Correo electrónico</label><input id="email" type="email" name="email" [(ngModel)]="email" placeholder="admin@organizacion.org" required></div>
+      <div class="field"><label for="password">Contraseña</label><input id="password" type="password" name="password" [(ngModel)]="password" placeholder="••••••••" required></div>
+      @if(error()){<p class="error">{{error()}}</p>}
+      <button class="btn btn-primary" type="submit">Iniciar sesión</button>
+      <p class="switch">Acceso exclusivo para administradores.</p>
+    </form>
+  </section>
+</main>
